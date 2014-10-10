@@ -1,0 +1,17 @@
+# Intellij project files
+*.iml
+*.ipr
+*.iws
+.idea/**/*
+
+# Gradle
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Crashlytics plugin
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
