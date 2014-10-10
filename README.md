@@ -24,8 +24,19 @@ Then we enable Crashlytics by adding crashlytics plugin and compile dependency t
 
 _app/build.gradle_
 ```java
+buildscript {
+    repositories {
+        maven { url 'http://download.crashlytics.com/maven' }
+    }
+    dependencies {
+        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+    }
+}
 apply plugin: 'crashlytics'
 
+repositories {
+    maven { url 'http://download.crashlytics.com/maven' }
+}
 dependencies {
 	compile 'com.crashlytics.android:crashlytics:1.+'
 }
