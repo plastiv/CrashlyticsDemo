@@ -20,7 +20,7 @@ Setup
 
 First of all we need to login at Crashlytics dashboard [www.crashlytics.com](https://www.crashlytics.com/) and download Android Studio plugin. Successful authorization within Android Studio plugin is required to continue.
 
-Then we enable Crashlytics by adding crashlytics plugin and compile dependency to our project build script.
+Then we enable Crashlytics by adding crashlytics plugin and compile dependency to our project build script. Make sure to add Crashlytics maven repository because Crashlytics binaries are not available at maven central.
 
 _app/build.gradle_
 ```java
