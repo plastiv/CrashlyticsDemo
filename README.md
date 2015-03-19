@@ -1,9 +1,9 @@
-Crashlytics Setup Demo
+Fabric Crashlytics Kit Setup Demo
 ===========
 
 Project shows how to:
 
-* setup Crashlytics on android with gradle build system
+* setup Fabric Crashlytics kit on android with gradle build system
 * disable Crashlytics for the debug build type
 * hide `apiSecret` and `apiKey` from repository
 * support custom source folder structure
@@ -13,7 +13,7 @@ About
 
 > Crashlytics for Android delivers deep, rich crash reporting across devices in real-­time. Crashlytics performs a detailed analysis of every thread on every Android device to identify the most important issues.
 
-Crashlytics is one of the crash reporting tools available to collect crash info from the user devices. Very likely you are using one of the alternatives already: Acra, Bugsense, Crittercism, etc. Crashlytics have all the features we would expect from crash reporting tool. Most important are: proguard deobfuscation, support for both handled and unhandled exceptions with no limits on free account.
+Crashlytics is one of the crash reporting tools available to collect crash info from the user devices. Very likely you are using one of the alternatives already: Acra, Bugsense, Crittercism, etc. Crashlytics have all the features we would expect from crash reporting tool. Most important are: proguard deobfuscation, support for both handled and unhandled exceptions with no limits on free account. Crashlytics get acquired by Twitter and after rebranding is called Fabric.io now.
 
 Setup
 -----
@@ -26,19 +26,19 @@ _app/build.gradle_
 ```java
 buildscript {
     repositories {
-        maven { url 'http://download.crashlytics.com/maven' }
+        maven { url 'https://maven.fabric.io/repo' }
     }
     dependencies {
-        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
+        classpath 'io.fabric.tools:gradle:1.16.0'
     }
 }
-apply plugin: 'crashlytics'
+apply plugin: 'io.fabric'
 
 repositories {
-    maven { url 'http://download.crashlytics.com/maven' }
+    maven { url 'https://maven.fabric.io/repo' }
 }
 dependencies {
-	compile 'com.crashlytics.android:crashlytics:1.+'
+	compile "com.crashlytics.sdk.android:crashlytics:2.2.2"
 }
 ```
 
@@ -51,7 +51,7 @@ public class CrashlyticsDemoApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-    Crashlytics.start(this);
+    Fabric.with(this, new Crashlytics());
   }
 }
 ```
@@ -133,7 +133,7 @@ After disabling Crashlytics gradle plugin with `ext.enableCrashlytics=false` it 
 @Override
 public void onCreate() {
     if (BuildConfig.USE_CRASHLYTICS) {
-        Crashlytics.start(this);
+        Fabric.with(this, new Crashlytics());
     }
 }
 ```
