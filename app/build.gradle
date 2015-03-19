@@ -1,23 +1,15 @@
-buildscript {
-    repositories {
-        maven { url 'http://download.crashlytics.com/maven' }
-    }
-    dependencies {
-        classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
-    }
-}
-
 apply plugin: 'com.android.application'
-apply plugin: 'crashlytics'
+//Put Fabric plugin after Android plugin
+apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "20.0.0"
+    compileSdkVersion 22
+    buildToolsVersion "22"
 
     defaultConfig {
         applicationId "com.github.plastiv.crashlyticsdemo"
         minSdkVersion 15
-        targetSdkVersion 19
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -29,7 +21,7 @@ android {
             ext.enableCrashlytics = false
         }
         release {
-            runProguard true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             // enable crashlytics
@@ -40,12 +32,12 @@ android {
 }
 
 repositories {
-    maven { url 'http://download.crashlytics.com/maven' }
+    maven { url 'https://maven.fabric.io/repo' }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.crashlytics.android:crashlytics:1.+'
+    compile "com.crashlytics.sdk.android:crashlytics:2.2.2"
 }
 
 afterEvaluate {
