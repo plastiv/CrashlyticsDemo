@@ -3,7 +3,7 @@ Fabric Crashlytics Kit Setup Demo
 
 Project shows how to:
 
-* setup Fabric Crashlytics kit on android with gradle build system
+* setup Fabric Crashlytics kit on Android with Gradle build system
 * disable Crashlytics for the debug build type
 * hide `apiSecret` and `apiKey` from repository
 * support custom source folder structure
@@ -11,16 +11,16 @@ Project shows how to:
 About
 ------
 
-> Crashlytics for Android delivers deep, rich crash reporting across devices in real-Â­time. Crashlytics performs a detailed analysis of every thread on every Android device to identify the most important issues.
+> Crashlytics for Android delivers deep, rich crash reporting across devices in real-­time. Crashlytics performs a detailed analysis of every thread on every Android device to identify the most important issues.
 
-Crashlytics is one of the crash reporting tools available to collect crash info from the user devices. Very likely you are using one of the alternatives already: Acra, Bugsense, Crittercism, etc. Crashlytics have all the features we would expect from crash reporting tool. Most important are: proguard deobfuscation, support for both handled and unhandled exceptions with no limits on free account. Crashlytics get acquired by Twitter and after rebranding is called Fabric.io now.
+Crashlytics is one of the crash reporting tools available to collect crash info from the user devices. Likely you are using one of the alternatives already: Acra, Bugsense, Crittercism, etc. Crashlytics have all the features we would expect from crash reporting tool. Most important are: Proguard deobfuscation, support for both handled and unhandled exceptions with no limits on free account. Crashlytics get acquired by Twitter and after rebranding is called Fabric.io now.
 
 Setup
 -----
 
-First of all we need to login at Crashlytics dashboard [www.crashlytics.com](https://www.crashlytics.com/) and download Android Studio plugin. Successful authorization within Android Studio plugin is required to continue.
+First of all we need to login at Crashlytics dashboard [www.fabric.com](https://fabric.io/dashboard) and download Android Studio plugin. Successful authorization within Android Studio plugin is required to continue. Plugin will provide the credentials which will be used later at CI and plugin can be deleted after one-time onboarding.
 
-Then we enable Crashlytics by adding crashlytics plugin and compile dependency to our project build script. Make sure to add Crashlytics maven repository because Crashlytics binaries are not available at maven central.
+We enable Crashlytics by adding crashlytics plugin and compile dependency to our project build script. Make sure to add Crashlytics maven repository because Crashlytics binaries are not available at maven central.
 
 _app/build.gradle_
 ```java
@@ -42,7 +42,7 @@ dependencies {
 }
 ```
 
-Then start Crashlytics from application entry point and that's all is needed to catch unhandled exception on server.
+Then start Crashlytics from application entry point and that's all is needed to track unhandled exceptions at Crashlytics dashboard.
 
 _src/java/com.github.plastiv.crashlyticsdemo.CrashlyticsDemoApplication_
 ```java
@@ -94,7 +94,7 @@ apiSecret=7c9df6d057e7bb62b17ab364e8115a75fcf7430873b6274bb094d1a8adb
 apiKey=cc238b2a4866ceb061b008839cdb49a8b77
 ```
 
-We can get `apiSecret` and `apiKey` from `~/.crashlytics/User.json` where they were created after successful login with Crashlytics plugin GUI for Android Studio. It make sense to keep this values private without sharing them at repository so we added `crashlytics.properties` file to the `.gitignore` too.
+We can get `apiSecret` and `apiKey` from `~/.crashlytics/User.json` where they were created after successful login with Crashlytics plugin GUI for Android Studio. It makes sense to keep this values private without sharing them at repository so we added `crashlytics.properties` file to the `.gitignore` too.
 
 _.gitignore_
 ```ini
@@ -104,10 +104,10 @@ crashlytics.properties
 crashlytics-build.properties
 ```
 
-Disable Crashlytics for the debug builds
+Disabling Crashlytics for the debug builds
 ---
 
-We may want to disable Crashlytics crash logging during debugging on local machine. Because all crashes are directly accessible from adb logcat with no need to use server infrastructure and be reported by mail. This could be done with gradle flavors and `ext.enableCrashlytics` parameter.
+We may want to disable Crashlytics crash logging during debugging on local machine. Because all crashes are directly accessible from adb logcat with no need to use server infrastructure and mail notifications. This could be done with gradle build types or flavors and `ext.enableCrashlytics` parameter.
 
 _app/build.gradle_
 ```java
@@ -141,7 +141,7 @@ public void onCreate() {
 Providing apiKey and apiSecret on CI
 ------
 
-We may want to keep your `apiKey` and `apiSecret` private without sharing it within git repository. But we still need this values to be able to run build from CI or other team members machines. Same technique is used here as when we hiding signingConfig keys from repository by providing it with project properties.
+We may want to keep your `apiKey` and `apiSecret` private without sharing it within git repository. But we still need this values to be able to run build from CI or other team members machines. We can use the same technique here as when we hiding signingConfig keys from a repository by providing them with project properties.
 
 _app/build.gradle_
 ```java
