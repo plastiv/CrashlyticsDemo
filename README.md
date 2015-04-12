@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/plastiv/CrashlyticsDemo.svg)](https://travis-ci.org/plastiv/CrashlyticsDemo)
+
 Fabric Crashlytics Kit Setup Demo
 ===========
 
@@ -11,7 +13,7 @@ Project shows how to:
 About
 ------
 
-> Crashlytics for Android delivers deep, rich crash reporting across devices in real-­time. Crashlytics performs a detailed analysis of every thread on every Android device to identify the most important issues.
+> Crashlytics for Android delivers deep, rich crash reporting across devices in real-ï¿½time. Crashlytics performs a detailed analysis of every thread on every Android device to identify the most important issues.
 
 Crashlytics is one of the crash reporting tools available to collect crash info from the user devices. Likely you are using one of the alternatives already: Acra, Bugsense, Crittercism, etc. Crashlytics have all the features we would expect from crash reporting tool. Most important are: Proguard deobfuscation, support for both handled and unhandled exceptions with no limits on free account. Crashlytics get acquired by Twitter and after rebranding is called Fabric.io now.
 
