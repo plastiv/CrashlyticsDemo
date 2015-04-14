@@ -29,7 +29,7 @@ buildscript {
         maven { url 'https://maven.fabric.io/repo' }
     }
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.16.0'
+        classpath 'io.fabric.tools:gradle:1.18.0'
     }
 }
 apply plugin: 'io.fabric'
@@ -38,7 +38,7 @@ repositories {
     maven { url 'https://maven.fabric.io/repo' }
 }
 dependencies {
-	compile "com.crashlytics.sdk.android:crashlytics:2.2.2"
+	compile "com.crashlytics.sdk.android:crashlytics:2.2.3"
 }
 ```
 
