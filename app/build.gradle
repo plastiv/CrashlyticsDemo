@@ -37,7 +37,7 @@ repositories {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile "com.crashlytics.sdk.android:crashlytics:2.2.2"
+    compile "com.crashlytics.sdk.android:crashlytics:2.2.3"
 }
 
 afterEvaluate {
