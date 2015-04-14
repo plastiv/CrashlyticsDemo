@@ -1,4 +1,4 @@
-Fabric Crashlytics Kit Setup Demo
+Fabric Crashlytics Kit Setup Demo [![Build Status](https://travis-ci.org/plastiv/CrashlyticsDemo.svg)](https://travis-ci.org/plastiv/CrashlyticsDemo)
 ===========
 
 Project shows how to:
@@ -199,3 +199,12 @@ crashlytics.manifestPath = "relative/path/to/manifest"
 crashlytics.resPath = "relative/path/to/res"
 crashlytics.assetsPath = "relative/path/to/assets"
 ```
+
+Run demo app
+-------
+
+Check yourself, that project doesn't have any of `crashlytics.properties`, `crashlytics-build.properties`, `com_crashlytics_export_strings.xml`
+or meta tag at `AndroidManifest.xml` but still both `debug` and `release` apks compiles fine. Because of `apiKey` and `apiSecret`
+are provided with environment variables.
+
+[![Environment variables](/images/travis-ci-environment-variables.png)](https://travis-ci.org/plastiv/CrashlyticsDemo)
