@@ -32,7 +32,7 @@ android {
 }
 
 repositories {
-    maven { url 'https://maven.fabric.io/repo' }
+    maven { url 'https://maven.fabric.io/public' }
 }
 
 dependencies {
