@@ -29,7 +29,7 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'io.fabric.tools:gradle:1.18.0'
+        classpath 'io.fabric.tools:gradle:1.19.1'
     }
 }
 apply plugin: 'io.fabric'
@@ -38,7 +38,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 dependencies {
-	compile "com.crashlytics.sdk.android:crashlytics:2.2.3"
+	compile "com.crashlytics.sdk.android:crashlytics:2.3.2"
 }
 ```
 
@@ -127,7 +127,7 @@ android {
 }
 ```
 
-After disabling Crashlytics gradle plugin with `ext.enableCrashlytics=false` it stops to create `crashlytics-build.properties` and `com_crashlytics_export_strings.xml` files and starting Crashlytics from code results in exception due to missing information. We wrap `Crashlytics.start()` with declared build config field to prevent it initialization.
+After disabling Crashlytics gradle plugin with `ext.enableCrashlytics=false` it stops to create `crashlytics-build.properties` and `com_crashlytics_export_strings.xml` files and starting Crashlytics from code results in exception due to missing information. We wrap Fabric factory with declared build config field to prevent it's initialization.
 
 ```java
 @Override

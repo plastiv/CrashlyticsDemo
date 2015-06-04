@@ -18,7 +18,7 @@ public class CrashlyticsDemoActivity extends Activity {
                 try {
                     throw new RuntimeException("Check Crashlytics handled exceptions are working");
                 } catch (Exception e) {
-                    Crashlytics.logException(e);
+                    Crashlytics.getInstance().core.logException(e);
                 }
             }
         });
