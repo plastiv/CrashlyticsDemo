@@ -18,5 +18,5 @@
 
 # Crashlytics
 -keepattributes SourceFile,LineNumberTable
--keep class com.crashlytics.** { *; }
--dontwarn com.crashlytics.**
+-keep class com.crashlytics.android.** { *; }
+-keep class io.fabric.sdk.android.** { *; }
