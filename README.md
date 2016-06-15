@@ -28,6 +28,8 @@ buildscript {
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
+        // to see latest version available:
+        // https://maven.fabric.io/public/io/fabric/tools/gradle/maven-metadata.xml
         classpath 'io.fabric.tools:gradle:1.21.6'
     }
 }
@@ -37,6 +39,8 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 dependencies {
+    // to see latest version available:
+    // https://maven.fabric.io/public/com/crashlytics/sdk/android/crashlytics/maven-metadata.xml
     compile('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
       transitive = true
     }

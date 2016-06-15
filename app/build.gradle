@@ -25,18 +25,19 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
 
+    buildTypes {
         debug {
-            // 6 disable crashlytics
+            // 6 disable crashlytics for debug
             buildConfigField "boolean", "USE_CRASHLYTICS", "false"
             ext.enableCrashlytics = false
         }
+
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
-            // 7 enable crashlytics
+            // 7 enable crashlytics for release
             buildConfigField "boolean", "USE_CRASHLYTICS", "true"
             ext.enableCrashlytics = true
         }
