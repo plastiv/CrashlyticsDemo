@@ -37,7 +37,7 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 dependencies {
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
       transitive = true
     }
 }
