@@ -41,7 +41,7 @@ repositories {
 dependencies {
     // to see latest version available:
     // https://maven.fabric.io/public/com/crashlytics/sdk/android/crashlytics/maven-metadata.xml
-    compile('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.0@aar') {
       transitive = true
     }
 }
