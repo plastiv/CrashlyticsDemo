@@ -9,7 +9,7 @@ repositories {
 
 dependencies {
     // 5 add crashlytics dependency
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true
     }
 }
