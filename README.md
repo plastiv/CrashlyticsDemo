@@ -30,7 +30,7 @@ buildscript {
     dependencies {
         // to see latest version available:
         // https://maven.fabric.io/public/io/fabric/tools/gradle/maven-metadata.xml
-        classpath 'io.fabric.tools:gradle:1.22.2'
+        classpath 'io.fabric.tools:gradle:1.24.1'
     }
 }
 apply plugin: 'io.fabric'
